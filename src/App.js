@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Users from "./user/pages/Users";
-import Authenticate from "./user/pages/Authenticate";
+import Auth from "./user/pages/Auth";
 import NewPlace from "./places/pages/NewPlace";
 import UserPlaces from "./places/pages/UserPlaces";
 import UpdatePlace from "./places/pages/UpdatePlace";
@@ -23,7 +23,7 @@ const App = () => {
             <Users />
           </Route>
           <Route path="/auth">
-            <Authenticate />
+            <Auth />
           </Route>
           <Route path="/:userId/places" exact>
             <UserPlaces />
