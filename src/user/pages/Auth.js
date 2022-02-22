@@ -5,6 +5,7 @@ import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import ImageUpload from "../../shared/components/FormElements/ImageUpload";
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_EMAIL,
@@ -104,6 +105,7 @@ const Auth = () => {
               validators={[VALIDATOR_REQUIRE()]}
             />
           )}
+          {!isLoginMode && <ImageUpload center id="image" />}
           <Input
             id="email"
             element="input"
