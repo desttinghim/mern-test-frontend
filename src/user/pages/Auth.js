@@ -55,7 +55,7 @@ const Auth = () => {
 
     try {
       if (isLoginMode) {
-        await sendRequest(
+        const responseData = await sendRequest(
           "http://localhost:5000/api/users/login",
           "POST",
           JSON.stringify({
@@ -66,9 +66,9 @@ const Auth = () => {
             "Content-Type": "application/json",
           }
         );
-        authCtx.login();
+        authCtx.login(responseData.user.id);
       } else {
-        await sendRequest(
+        const responseData = await sendRequest(
           "http://localhost:5000/api/users/signup",
           "POST",
           JSON.stringify({
@@ -80,7 +80,7 @@ const Auth = () => {
             "Content-Type": "application/json",
           }
         );
-        authCtx.login();
+        authCtx.login(responseData.user.id);
       }
     } catch (err) {}
   };
