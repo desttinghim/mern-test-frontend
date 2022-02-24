@@ -71,7 +71,7 @@ const Auth = () => {
             "Content-Type": "application/json",
           }
         );
-        authCtx.login(responseData.user.id);
+        authCtx.login(responseData.userId, responseData.token);
       } else {
         const formData = new FormData();
         formData.append("email", formState.inputs.email.value);
@@ -83,7 +83,7 @@ const Auth = () => {
           "POST",
           formData
         );
-        authCtx.login(responseData.user.id);
+        authCtx.login(responseData.userId, responseData.token);
       }
     } catch (err) {}
   };
