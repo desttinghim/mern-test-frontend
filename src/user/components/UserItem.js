@@ -14,7 +14,7 @@ const UserItem = (props) => {
           <div className="user-item__image">
             <Avatar
               alt={props.name}
-              image={`http://localhost:5000/${props.image}`}
+              image={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}
             />
           </div>
           <div className="user-item__info">
